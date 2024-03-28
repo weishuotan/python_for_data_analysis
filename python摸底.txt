@@ -1,0 +1,59 @@
+python 例题
+（一）你得到了一段文本 "This is a sample text. The text contains some words." 。
+要求：
+统计并输出该字符串中每个字母出现的次数（不区分大小写）。
+输出该字符串中最长的单词。
+
+text = "This is a sample text. The text contains some words."
+将文本转换为小写形式
+text_lower = text.lower()
+初始化字母计数字典
+letter_counts = {}
+for char in text_lower:
+	if char.isalpha():  只统计字母
+		letter_counts[char] = letter_counts.get(char,0) + 1
+每个字母出现的次数
+for letter,count in letter_counts.items():
+	print(f"{letter}:{count}")
+找出最长的单词
+words = text.split()
+longest_word = max(words,key=len)
+输出最长的单词
+print(f"最长的单词是：{longest_word}")
+
+------
+format
+1. f 转化的格式化输出方式
+只需要在我们要格式化输出的内容开头引号的前面加上 f ，
+在字符串内要转义的内容用 {} 括起来即可
+模板 ： print(f'xxx{aa}xxx')
+2. % 格式化输出的方法
+在我们要输出的字符串内将要转义内容，根据其数据类型和应用，用下面的符号代替即可
+模板：print('xxx%sxxx' % a)
+a = 'apple'
+price = 12
+print('输出：%c' % 33)     #将我们输入的数字按照ASCII码转换成对应的字符  33 对应的是！
+>>>输出：!
+print('输出：%s' % a)      # 转义输出字符串类型的数据
+>>>输出：apple
+print('输出：%d' % price)  # 将数字类型的数据类型转义输出整数
+>>>输出：12
+print('输出：%e' % 12)    #将数字转化成科学计数法的形式
+>>>输出：1.200000e+01
+print('输出：%o' % price)    #将整数转化成八进制数据
+>>>输出：14
+print('输出：%x' % price)   #将整数转化成十六进制数据
+>>>输出：c
+print('输出：%f' % price)    #格式化浮点数，默认保留小数点后六位
+>>>输出：12.000000
+3. str.format() 格式化输出的方法
+在我们要输出的字符串内将要转义内容，用 {} 代替，
+然后用 .format() 方法在括号里面传递我们想要输出的内容即可
+模板 ： print('xxx{}xxx'.format(x,x))
+------
+split
+str.split(str="",num=string.count(str))[n]
+str:表示为分隔符，默认为空格，但是不能为空(’’)。若字符串中没有分隔符，则把整个字符串作为列表的一个元素
+num:表示分割次数。如果存在参数num，则仅分隔成 num+1 个子字符串，并且每一个子字符串可以赋给新的变量。默认为 -1, 即分隔所有。
+[n]:表示选取第n个分片
+注意：当使用空格作为分隔符时，对于中间为空的项会自动忽略
