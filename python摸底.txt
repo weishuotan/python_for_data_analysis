@@ -93,3 +93,12 @@ for score in students.values():
 print("成绩分布：")
 for grade,count in grades.items():
 	print(f"{grade}:{count}人")
+------
+max函数
+默认数值型参数，取值大者；
+字符型参数，取字母表排序靠后者。
+key---可做为一个函数，用来指定取最大值的方法。
+default---用来指定最大值不存在时返回的默认值。
+arg1---字符型参数/数值型参数，默认数值型
+max(iterable, *[, key, default])
+max(arg1, arg2, *args[, key])
