@@ -109,3 +109,22 @@ max(arg1, arg2, *args[, key])
 words = {'apple': 5, 'banana': 8, 'cherry': 2}
 print(f"最多水果的数量：{max(words,key=words.get)},名称：{words[max(words,key=words.get)]}")
 ------
+（四）给定一个列表numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]，
+请写一个程序，计算列表中所有偶数的和，并打印出结果。
+------
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+sum = 0
+for i in numbers:
+	if i % 2 == 0:
+	    sum=sum+i
+print(f"偶数的和为：{sum}")
+------
+（五）编写一个程序，接受用户输入的字符串，然后输出该字符串的逆序。例如：
+示例输入：
+Hello, World!
+示例输出：
+!dlroW ,olleH
+user_input = input("请输入一个字符串：")
+reversed_user_input = user_input[::-1]
+print(reversed_user_input)
+变量名/字符串（头下标 ：尾下标 ：跨步值 / 步长值）
