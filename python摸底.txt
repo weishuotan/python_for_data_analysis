@@ -102,3 +102,10 @@ default---用来指定最大值不存在时返回的默认值。
 arg1---字符型参数/数值型参数，默认数值型
 max(iterable, *[, key, default])
 max(arg1, arg2, *args[, key])
+------
+（三）给定一个字典words = {'apple': 5, 'banana': 8, 'cherry': 2}，
+请写一个程序，找到字典中数量最多的水果，并打印出其名称和数量。
+------
+words = {'apple': 5, 'banana': 8, 'cherry': 2}
+print(f"最多水果的数量：{max(words,key=words.get)},名称：{words[max(words,key=words.get)]}")
+------
